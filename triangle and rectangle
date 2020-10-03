@@ -1,0 +1,74 @@
+<html>
+<head>
+<body>
+
+let height= 5;
+let width = 10;
+//let offLength = 0;
+// creating the ladder
+for(offLength=0;offLength +=width)
+{
+    let rectangle="";
+
+    //draw line by line
+    // (initialization-1,initialization-2 ; condition-1 (logical operators (&& , ||)) condition-2 ; update-1,update-2)
+    for(let h=0;h<height;h++)
+    {
+        // create new line
+        let line="\n";
+
+        // create offset
+        let offset="";
+        for(let o=0;o<offLength;o++)
+            offset += " ";
+        //apped it to the new line
+        line +=offset;
+
+        //draw number of stars in that line equal to the width
+        for(let w=0;w<width;w++)
+            line += "*";
+
+        //append the line to the rectangle
+        rectangle += line;
+        
+    }
+    console.log(rectangle);
+}
+
+
+let leftAligned = true;
+let theight = 5;
+let repeat = 1;
+let triangle = "";
+
+for(let r=0;r<repeat;r++)
+{
+    leftAligned = (r % 2);
+    //for each line
+    for(let h=0;h<theight;h++)
+    {
+        //create a new line
+        let line = "\n";
+
+        if(!leftAligned)
+        {
+            //create the offset
+            let offset ="";
+            for(let offLength=theight-(h +1);offLength>=0;offLength--)
+                offset +=" ";
+            //append the created offset to the line
+            line += offset;
+        }
+
+        // draw a number of starts equals to the line number
+        for (let s=0;s<h+1;s++)
+            line += "*";
+        
+        //appeand the new line to the triangle
+        triangle +=line;
+    }
+    console.log(triangle);
+}
+</body>
+</head>
+</html>
